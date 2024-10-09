@@ -1,0 +1,12 @@
+---
+# tasks file for configure-tmux
+- name: "Install tmux"
+  apt:
+   name: tmux
+   state: latest  
+  become: true
+  become_method: sudo
+- name: "Copying Tmux Configfile"
+  copy:
+   src: "{{ role_path }}/files/.tmux.conf"
+   dest: "{{ ansible_env.HOME }}/.tmux.conf"

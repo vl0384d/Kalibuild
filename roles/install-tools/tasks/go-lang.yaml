@@ -1,0 +1,13 @@
+- name: "Install gccgo-go"
+  apt: 
+    name: gccgo-go
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: "Install golang-go"
+  apt: 
+    name: golang-go
+    state: latest
+  become: true
+  become_method: sudo

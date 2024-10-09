@@ -1,0 +1,15 @@
+---
+# tasks file for install-tools
+- name: "Install dconf"
+  apt: 
+   name: dconf-cli
+   state: latest
+  become: true
+  become_method: sudo
+
+- name: "Install Go"
+  include_tasks: "go-lang.yaml"
+
+- name: "Install kerbrute"
+  include_tasks: "kerbrute.yaml"
+    
