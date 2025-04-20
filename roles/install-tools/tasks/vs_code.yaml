@@ -1,15 +1,13 @@
----
-- name: Install Visual Studio Code
-  hosts: localhost
-  tasks:
-    - name: Add Microsoft GPG key
-      apt_key:
-        url: https://packages.microsoft.com/keys/microsoft.asc
+
+    - name: Install dependencies
+      apt:
+        name: 
+          - software-properties-common
+          - apt-transport-https
+          - wget
         state: present
       become: true
-      become_method: sudo
-
-        
+      become_method: sudo        
 
     - name: Add VS Code repository
       apt_repository:
@@ -39,5 +37,3 @@
         code --install-extension ms-vscode.csharp
         code --install-extension redhat.java
         code --install-extension golang.go
-      become: true
-      become_method: sudo
