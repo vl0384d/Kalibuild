@@ -1,0 +1,43 @@
+---
+- name: Install Visual Studio Code
+  hosts: localhost
+  tasks:
+    - name: Add Microsoft GPG key
+      apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+      become: true
+      become_method: sudo
+
+        
+
+    - name: Add VS Code repository
+      apt_repository:
+        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+        state: present
+      become: true
+      become_method: sudo
+
+    - name: Update package list
+      apt:
+        update_cache: yes
+      become: true
+      become_method: sudo
+
+    - name: Install VS Code
+      apt:
+        name: code
+        state: present
+      become: true
+      become_method: sudo
+
+    - name: Install VS Code extensions
+      shell: |
+        code --install-extension ms-python.python
+        code --install-extension ms-toolsai.jupyter
+        code --install-extension ms-vscode.cpptools
+        code --install-extension ms-vscode.csharp
+        code --install-extension redhat.java
+        code --install-extension golang.go
+      become: true
+      become_method: sudo
