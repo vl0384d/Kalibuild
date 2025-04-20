@@ -7,9 +7,14 @@
   become: true
   become_method: sudo
 
-- name: "Install Go"
-  include_tasks: "go-lang.yaml"
+# - name: "Install Go"
+#   include_tasks: "go-lang.yaml"
 
 - name: "Install kerbrute"
   include_tasks: "kerbrute.yaml"
-    
+
+
+- name: "Install VS Code"
+  include_tasks: "vs_code.yaml"
+
+  
