@@ -30,3 +30,5 @@
         code --install-extension ms-vscode.csharp
         code --install-extension redhat.java
         code --install-extension golang.go
+      become: true
+      become_user: kali
