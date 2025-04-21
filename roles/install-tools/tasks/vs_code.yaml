@@ -9,8 +9,6 @@
       apt:
         deb: /tmp/code.deb
         state: present
-      become: true
-      become_method: sudo
 
     - name: Clean up
       file:
