@@ -9,11 +9,15 @@
       apt:
         deb: /tmp/code.deb
         state: present
+      become: true
+      become_method: sudo
 
     - name: Clean up
       file:
         path: /tmp/code.deb
         state: absent 
+      become: true
+      become_method: sudo
 
     - name: Install VS Code extensions
       shell: |
