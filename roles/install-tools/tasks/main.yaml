@@ -13,6 +13,8 @@
 - name: "Install kerbrute"
   include_tasks: "kerbrute.yaml"
 
+- name: "Install Google Chrome"
+  include_tasks: "google.yaml"
 
 - name: "Install VS Code"
   include_tasks: "vs_code.yaml"
