@@ -1,0 +1,6 @@
+- name: "Install snmp-mibs-downloader"
+  apt: 
+    name: snmp-mibs-downloader
+    state: latest
+  become: true
+  become_method: sudo
