@@ -1,4 +1,3 @@
----
 # tasks file for install-tools
 - name: "Install dconf"
   apt: 
@@ -7,8 +6,8 @@
   become: true
   become_method: sudo
 
-# - name: "Install Go"
-#   include_tasks: "go-lang.yaml"
+- name: "Install Go"
+  include_tasks: "go-lang.yaml"
 
 - name: "Install kerbrute"
   include_tasks: "kerbrute.yaml"
